@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="team1" class="com.cm.beans.Company">
+		<property name="employeeId">
+			<set value-type="java.lang.String">
+				<value>y16001</value>
+				<value>y16002</value>
+			</set>
+		</property>
+	</bean>
+	
+	<bean id="team2" class="com.cm.beans.Company" parent="team1">
+		<property name="employeeId">
+			<set value-type="java.lang.String" merge="true">
+				<value>y16003</value>
+			</set>
+		</property>
+	</bean>
+</beans>
